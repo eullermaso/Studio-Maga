@@ -1,146 +1,131 @@
 import React from "react";
-import { View, Text, FlatList, SafeAreaView, StyleSheet,Button, TouchableOpacity, ImageBackground } from 'react-native';
-import Botao from '../Botao'
-import Consultas from './Consulta'
+import { View, Text, FlatList, SafeAreaView, StyleSheet, Button, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-const img1 =  '../../assets/imagem_unhas/unhas_mao.jpg';
-const img2 =  '../../assets/imagem_unhas/unhas_pe.jpg';
-const img3 =  '../../assets/imagem_unhas/unhas_pe_mao.jpg';
-import Texto from '../Texto'
-
-
-
-
 
 const produtos = [
-
     {
-        
-        id: "01",
+        id: "1",
         info: ['Mão', '25.00'],
         imagem: require('../../assets/imagem_unhas/unhas_mao.jpg')
     },
     {
-        id: "02",
+        id: "2",
         info: ['Pé', '23.00'],
         imagem: require('../../assets/imagem_unhas/unhas_pe.jpg')
     },
     {
-        id: "03",
+        id: "3",
         info: ['Pé e Mão', '45.00'],
         imagem: require('../../assets/imagem_unhas/unhas_pe_mao.jpg')
     },
 ]
 
-export default function Lista(){
+export default function Lista() {
     const navigation = useNavigation();
 
-    return<>
+    return <>
 
-        
         <FlatList
-        
             style={estilos.corpo}
             data={produtos}
-            keyExtractor={item=>item.id}
-            renderItem={({item})=>
-            
-            
-        <View style={estilos.retrato}>
-            <View style={estilos.produtos}>
-                <View style={estilos.lista}>
-                <TouchableOpacity style={estilos.botao} onPress={()=>navigation.navigate("Unhas")}>
-                    <View style={estilos.figura}>
-                        <ImageBackground style={estilos.img} source={item.imagem} resizeMode="cover" ></ImageBackground>
-                        </View>
-                        </TouchableOpacity>
+            keyExtractor={item => item.id}
+            renderItem={({ item }) =>
+
+                <View style={estilos.retrato}>
+                    <View style={estilos.produtos}>
+                        <View style={estilos.lista}>
                         <View style={estilos.info}>
-                        <Text style={estilos.descricao}>{item.info[0]}</Text>
-                        <Text style={estilos.valor}>R${item.info[1]}</Text>
+                                <Text style={estilos.descricao}>{item.info[0]}</Text>
+                                <Text style={estilos.valor}>R${item.info[1]}</Text>
+                            </View>
+                            <TouchableOpacity style={estilos.botao} onPress={() => navigation.navigate("Unhas")}>
+                                <View style={estilos.figura}>
+                                    <ImageBackground style={estilos.img} source={item.imagem} resizeMode="cover" ></ImageBackground>
+                                </View>
+                            </TouchableOpacity>
+
                         </View>
+
+
                     </View>
-                    
-                    
                 </View>
-                </View>
-                }
+            }
         />
-       
-    
-    
-    
+
+
     </>
 }
 
 const estilos = StyleSheet.create({
-    corpo:{
-        
-        marginTop:20,
-        flex:1,
-        height: "100%"
-       
-       // backgroundColor: "blue"
+    corpo: {
+        marginTop: 10,
+        height: "100%",
     },
-    produtos:{
-        paddingBottom:20,
-        paddingTop:20,
-        paddingLeft: 20,
-        //borderColor: "black",
-        //borderStyle: "solid",
-        //borderWidth: 1,
-        
-        //backgroundColor: "red"
+    produtos: {
+        paddingBottom: 0,
+        paddingTop: 10,
+        paddingLeft: 0,
+    },
+    lista: {
+        flexDirection: "row",
+        gap: 100,
+        alignItems: "center",
+        borderColor: "black",
+        borderStyle: "solid",
+        borderBottomWidth: 2,
+        paddingBottom: 10,
+        marginLeft: 0,
+        justifyContent: "center",
+        backgroundColor: "pink"
+
 
     },
-    lista:{
+    lista2: {
         flexDirection: "row",
         gap: 20,
-        //backgroundColor: "green",
-        alignItems: "center"
+        alignItems: "center",
+        borderColor: "black",
+        borderStyle: "solid",
+        borderTopWidth: 2,
+        paddingBottom: 0,
+        marginLeft: 0,
+
     },
-    figura:{
-        backgroundColor: "white",
+    figura: {
         borderRadius: 10,
-        width: 150,
-        height: 200,
-    }, 
-    
-    descricao:{
+        width: 100,
+        height: 100,
+    },
+    descricao: {
         fontSize: 25,
-        marginBottom:100,
-        fontWeight: "bold"
+        marginBottom: 10,
+        fontWeight: "bold",
     },
-    botao:{
+    botao: {
         borderRadius: 10,
-        width: 150,
-        height: 200,
-        
-        
+        width: 100,
+        height: 100,
     },
-    img:{
+    img: {
         resizeMode: "cover",
         flex: 1,
         borderRadius: 10,
         borderWidth: 3,
-        borderColor: "black"
-        
+        borderColor: "black",
+
     },
-    info:{
+    info: {
         alignItems: "center",
-        //backgroundColor: "red",
         marginLeft: 40,
-        
+        width: 150
+
     },
-    valor:{
+    valor: {
         fontSize: 20
     },
 
-    retrato:{
-       // borderTopColor: "black",
-       // borderStyle: "solid",
-        //borderBottomColor: "transparent",
-       // borderWidth: 1,
-        marginTop: 0
+    retrato: {
+        marginTop: 0,
     }
 
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Texto from './Texto'
-import { TouchableOpacity, Alert, StyleSheet, Text, Image } from 'react-native';
+import { TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
@@ -24,7 +24,13 @@ const estilos = StyleSheet.create({
         alignSelf: "center",
         alignItems: "center",
         gap: 20,
-        paddingTop: 10
+        paddingTop: 10,
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 2 },
+        shadowOpacity: 0.8,
+        shadowRadius: 2,
+        elevation: 15 
+
 
     },
     nomeBotao:{

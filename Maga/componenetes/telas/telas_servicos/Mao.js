@@ -1,15 +1,18 @@
 import React from "react";
 
 import Topo from '../../Topo'
-import { View, Image, StyleSheet, FlatList, Text } from 'react-native';
-import F1 from '../../../assets/Splash/SPLASH.png'
+import { View, StyleSheet} from 'react-native';
 import Lista from '../Lista'
+import Arrow from "../../Arrow";
+import Texto from "../../Texto";
 
 export default function Mao(){
     return<>
     <Topo></Topo>
-    
-    
+    <View style={estilos.descricao}>
+        <Texto style={estilos.text}>Unhas</Texto>
+    </View>
+    <Arrow/>
     <Lista></Lista>
     
     </>
@@ -17,16 +20,14 @@ export default function Mao(){
 
 
 const estilos = StyleSheet.create({
-    Lista:{
-
-    },
     text:{
         fontSize:30,
         fontWeight: "bold"
     },
-    titulo:{
+    descricao:{
         alignItems: "center",
-        marginTop: 20,
+        justifyContent:"center",
+        paddingTop: 20,
         
     },
 })

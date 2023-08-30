@@ -1,13 +1,13 @@
 import React from "react";
 import logo from '../assets/Imagens_Topo/Studio.png'
-import { Image, Text, View, StyleSheet, Dimensions} from 'react-native'
+import { Image, View, StyleSheet, Dimensions} from 'react-native'
 
 const width = Dimensions.get('screen').width;
 
 export default function Topo(){
     return <>
     <View style={estilos.topo}>
-        <Image source={logo}></Image>
+        <Image style={estilos.imagem} source={logo}></Image>
     </View>
     
     </>
@@ -30,6 +30,13 @@ const estilos = StyleSheet.create({
         shadowOpacity: 0.8,
         shadowRadius: 2,
         elevation: 5 
+    },
+    imagem: {
+        width: 290,
+        height: 170,
+        
+
     }
+
 
 })

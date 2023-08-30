@@ -1,16 +1,18 @@
 import React from "react";
 
-import { View, Text, StyleSheet,Image, Button, TouchableOpacity } from 'react-native';
+import { View, StyleSheet} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import Topo from '../Topo'
 import Texto from '../Texto'
 import Botao from '../Botao'
 import eyebrow from '../../assets/Images_botao/eyebrow.png'
-import Arrow from '../../assets/Images_botao/Arrow.png'
 import depilacao from '../../assets/Images_botao/depilacao.png'
 import nail from '../../assets/Images_botao/nail.png'
 import skincare from '../../assets/Images_botao/skincare.png'
-import { useNavigation } from '@react-navigation/native';
-import Unhas from '../telas/telas_servicos/Unhas'
+import Arrow from '../Arrow'
+
+
 
 export default function Consulta(){
     const navigation = useNavigation();
@@ -19,10 +21,7 @@ export default function Consulta(){
     <View style={estilos.Descricao}>
         <Texto style={estilos.text}>Serviços</Texto>
     </View>
-    <TouchableOpacity style={estilos.seta} onPress={() => navigation.goBack()}>
-    <Image source={Arrow}></Image>
-    </TouchableOpacity>
-
+        <Arrow/>
     <View style={estilos.Buttons}>
         <Botao design={estilos.Bot} nome={estilos.nome} menu={nail} servico={"Unhas"} tela='Mao'></Botao>
         <Botao design={estilos.Bot} nome={estilos.nome} menu={skincare} servico={"Skincare"}></Botao>
@@ -57,15 +56,11 @@ const estilos = StyleSheet.create({
         
     },
 
-    seta:{
-        paddingLeft: 30,
-    },
-
     text:{
-        fontSize: 20,
+        fontSize: 30,
         fontWeight: "bold"
     },
     nome:{
         color: "black"
-    }
+    },
 })
