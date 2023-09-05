@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Text, FlatList, SafeAreaView, StyleSheet, Button, TouchableOpacity, ImageBackground } from 'react-native';
+import { View, Text, FlatList, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+
 
 const produtos = [
     {
@@ -20,6 +21,18 @@ const produtos = [
     },
 ]
 
+
+const setListaDesejos = (x) => {
+    if(x === "1"){
+        return (
+            console.log("Certo")
+        )
+    }else{
+        return console.log("Errado")
+    }
+
+};
+
 export default function Lista() {
     const navigation = useNavigation();
 
@@ -38,7 +51,7 @@ export default function Lista() {
                                 <Text style={estilos.descricao}>{item.info[0]}</Text>
                                 <Text style={estilos.valor}>R${item.info[1]}</Text>
                             </View>
-                            <TouchableOpacity style={estilos.botao} onPress={() => navigation.navigate("Unhas")}>
+                            <TouchableOpacity style={estilos.botao} onPress={() => {navigation.navigate("Unhas"), console.log(item.id), setListaDesejos(item.id)}}>
                                 <View style={estilos.figura}>
                                     <ImageBackground style={estilos.img} source={item.imagem} resizeMode="cover" ></ImageBackground>
                                 </View>
@@ -80,21 +93,12 @@ const estilos = StyleSheet.create({
 
 
     },
-    lista2: {
-        flexDirection: "row",
-        gap: 20,
-        alignItems: "center",
-        borderColor: "black",
-        borderStyle: "solid",
-        borderTopWidth: 2,
-        paddingBottom: 0,
-        marginLeft: 0,
-
-    },
     figura: {
         borderRadius: 10,
         width: 100,
         height: 100,
+        marginTop: 5,
+
     },
     descricao: {
         fontSize: 25,

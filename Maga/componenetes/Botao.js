@@ -4,11 +4,13 @@ import { TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function Botao({servico, menu,tela,design,nome,cor}){
+export default function Botao({servico, menu,tela,design,nome, finalizar}){
+
+    
     
     const navigation = useNavigation();
     return <>
-    <TouchableOpacity style={[estilos.botao, design]} onPress={()=>navigation.navigate(tela)}>
+    <TouchableOpacity style={[estilos.botao, design]} onPress={()=>{navigation.navigate(tela), finalizar}}>
         <Texto style={[estilos.nomeBotao, nome]}>{servico}</Texto>
         <Image source={menu}></Image>
     </TouchableOpacity>

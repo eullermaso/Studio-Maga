@@ -1,11 +1,17 @@
 import React from "react";
 import Calendar from "react-native-calendars/src/calendar";
-import { Text, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Botao from "./Botao";
 import { useNavigation } from "@react-navigation/native";
 
-export default function Calendario() {
+
+
+export default function Calendario({}) {
   const navigation = useNavigation();
+
+  const teste = () => {
+    return console.log("TESTE")
+  }
 
   return (
     <>
@@ -16,7 +22,7 @@ export default function Calendario() {
         <Botao design={estilos.hora} servico="17:55"></Botao>
       </View>
 
-      <Botao design={estilos.botao} servico="Finalizar" tela="Agendado"></Botao>
+      <Botao design={estilos.botao} servico="Finalizar" tela="Agendado" finalizar={teste()}></Botao>
     </>
   );
 }
