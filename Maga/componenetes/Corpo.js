@@ -13,7 +13,7 @@ export default function Corpo({}){
         
         <View  style={estilos.botoes}>
             <Botao design={estilos.botao} servico={"Consultar Serviços"} menu={Servico} tela='Consultas'></Botao>
-            <Botao servico={"Consultar Agendamentos"} menu={Agenda} tela=''></Botao>
+            <Botao servico={"Agendamentos"} menu={Agenda} tela='Agendamentos'></Botao>
             <Botao servico={"Dúvidas | Suporte"} menu={grupo} tela=''></Botao>
         </View>
         
@@ -31,13 +31,5 @@ const estilos  = StyleSheet.create({
     botoes:{
         gap: 50
 
-    },
-    botao:{
-
-        
     }
-
-
-
-
 })

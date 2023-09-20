@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View, StyleSheet} from 'react-native';
+import { View, StyleSheet, ScrollView} from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import Topo from '../Topo'
@@ -17,36 +17,40 @@ import Arrow from '../Arrow'
 export default function Consulta(){
     const navigation = useNavigation();
     return <>
+    <ScrollView>
     <Topo/>
     <View style={estilos.Descricao}>
         <Texto style={estilos.text}>Serviços</Texto>
     </View>
         <Arrow/>
     <View style={estilos.Buttons}>
-        <Botao design={estilos.Bot} nome={estilos.nome} menu={nail} servico={"Unhas"} tela='Mao'></Botao>
-        <Botao design={estilos.Bot} nome={estilos.nome} menu={skincare} servico={"Skincare"}></Botao>
-        <Botao design={estilos.Bot} nome={estilos.nome} menu={depilacao} servico={"Depilação"}></Botao>
-        <Botao design={estilos.Bot} nome={estilos.nome} menu={eyebrow} servico={"Sobrancelha"}></Botao>
+        <Botao design={estilos.Bot} nome={estilos.nome} menu={nail} servico={"Unhas"} tela='Mao' resize={estilos.resize}></Botao>
+        <Botao design={estilos.Bot} nome={estilos.nome} menu={skincare} servico={"Skincare"} resize={estilos.resize}></Botao>
+        <Botao design={estilos.Bot} nome={estilos.nome} menu={depilacao} servico={"Depilação"} resize={estilos.resize}></Botao>
+        <Botao design={estilos.Bot} nome={estilos.nome} menu={eyebrow} servico={"Sobrancelha"} resize={estilos.resize}></Botao>
     </View>
-    
+    </ScrollView>
     
     </>
+    
 }
 
 const estilos = StyleSheet.create({
     Buttons:{
         gap: 30,
         marginTop:30,
+        marginBottom: 50,
+        
         
        
     },
     Bot:{
         flexDirection: "column-reverse",
-        gap: 2,
+        gap:0,
         alignItems: "center",
-        
-        
-        
+        width: 200,
+        height: 90,
+       
     },
 
     Descricao:{
@@ -61,6 +65,10 @@ const estilos = StyleSheet.create({
         fontWeight: "bold"
     },
     nome:{
-        color: "black"
+        color: "white"
     },
+    resize:{
+        height: 55,
+        width: 55
+    }
 })

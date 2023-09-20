@@ -2,6 +2,8 @@ import React from "react";
 import { View, Text, FlatList, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+import Agendamentos from "./telas_servicos/Agendamentos";
+import { useData } from "../DataContext";
 
 const produtos = [
     {
@@ -33,8 +35,26 @@ const setListaDesejos = (x) => {
 
 };
 
+
 export default function Lista() {
     const navigation = useNavigation();
+
+    const nome = {
+        nome: "Euller"
+    }
+
+    const {data, setData} = useData();
+
+    const numerosDosIds = produtos.map((produto) => {
+        return (produto.id); // Converte o ID para número usando parseInt
+      });
+
+      console.log("Números dos IDs dos produtos:", numerosDosIds);
+
+    const changeData = (item) => {
+        setData(item)
+        console.log("Mudou")
+    }
 
     return <>
 
@@ -46,19 +66,21 @@ export default function Lista() {
 
                 <View style={estilos.retrato}>
                     <View style={estilos.produtos}>
+                    <TouchableOpacity style={estilos.botao} onPress={() => {navigation.navigate("Unhas", {nome}), console.log(item.id, item.info[0]), setListaDesejos(item.id), changeData(item.info[0]+ "   R$ " + item.info[1])}}>
                         <View style={estilos.lista}>
+                        
+                                <View style={estilos.figura}>
+                                    <ImageBackground style={estilos.img} source={item.imagem} resizeMode="cover" ></ImageBackground>
+                                </View>
+                            
                         <View style={estilos.info}>
                                 <Text style={estilos.descricao}>{item.info[0]}</Text>
                                 <Text style={estilos.valor}>R${item.info[1]}</Text>
                             </View>
-                            <TouchableOpacity style={estilos.botao} onPress={() => {navigation.navigate("Unhas"), console.log(item.id), setListaDesejos(item.id)}}>
-                                <View style={estilos.figura}>
-                                    <ImageBackground style={estilos.img} source={item.imagem} resizeMode="cover" ></ImageBackground>
-                                </View>
-                            </TouchableOpacity>
+                           
 
                         </View>
-
+                        </TouchableOpacity>
 
                     </View>
                 </View>
@@ -71,26 +93,27 @@ export default function Lista() {
 
 const estilos = StyleSheet.create({
     corpo: {
-        marginTop: 10,
+        marginTop: 30,
         height: "100%",
     },
     produtos: {
         paddingBottom: 0,
-        paddingTop: 10,
+        paddingTop: 0,
         paddingLeft: 0,
+        // backgroundColor: "red",
+        
+       
     },
     lista: {
         flexDirection: "row",
-        gap: 100,
+        gap: 20,
         alignItems: "center",
         borderColor: "black",
         borderStyle: "solid",
-        borderBottomWidth: 2,
-        paddingBottom: 10,
+        borderBottomWidth: 0,
+        paddingBottom: 4,
         marginLeft: 0,
-        justifyContent: "center",
-        backgroundColor: "pink"
-
+        
 
     },
     figura: {
@@ -107,14 +130,22 @@ const estilos = StyleSheet.create({
     },
     botao: {
         borderRadius: 10,
-        width: 100,
+        width: 342,
         height: 100,
+        marginLeft: 10,
+        backgroundColor: "#d6ccc2",
+        alignItems: "center",
+        justifyContent: "center",
+        marginBottom: 20
+        
+        
+       
     },
     img: {
         resizeMode: "cover",
         flex: 1,
         borderRadius: 10,
-        borderWidth: 3,
+        borderWidth: 4,
         borderColor: "black",
 
     },

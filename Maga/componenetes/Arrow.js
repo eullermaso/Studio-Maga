@@ -21,7 +21,8 @@ const estilos = StyleSheet.create({
         marginRight: 345,
         height: 40,
         justifyContent: "center",
-        borderRadius: 20
+        borderRadius: 20,
+        width: 45
     },
 });
 
