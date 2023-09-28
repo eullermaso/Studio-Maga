@@ -7,6 +7,7 @@ import Texto from './Texto'
 
 export default function Inicial({}){
     return <>
+    <ScrollView>
     <Topo/>
     <View style={estilos.corpo}>
         <View  style={estilos.welcome}>
@@ -14,7 +15,7 @@ export default function Inicial({}){
         </View>
         <Corpo></Corpo>
     </View>
-    
+    </ScrollView>
     </>
 }
 
@@ -38,6 +39,9 @@ export default function Inicial({}){
         fontWeight: "bold",
         fontSize: 25
 
+     },
+     body:{
+        marginBottom: 50,
      }
 
     
