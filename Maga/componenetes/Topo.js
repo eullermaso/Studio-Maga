@@ -1,5 +1,7 @@
 import React from "react";
 import logo from '../assets/Imagens_Topo/Studio.png'
+import logo2 from '../assets/logo2.png'
+
 import { Image, View, StyleSheet, Dimensions} from 'react-native'
 
 const width = Dimensions.get('screen').width;
@@ -7,7 +9,7 @@ const width = Dimensions.get('screen').width;
 export default function Topo(){
     return <>
     <View style={estilos.topo}>
-        <Image style={estilos.imagem} source={logo}></Image>
+        <Image style={estilos.imagem} source={logo2}></Image>
     </View>
     
     </>

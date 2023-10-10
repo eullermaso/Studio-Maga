@@ -130,7 +130,7 @@ const estilos = StyleSheet.create({
     },
     botao: {
         borderRadius: 10,
-        width: 342,
+        width: '95%',
         height: 100,
         marginLeft: 10,
         backgroundColor: "#d6ccc2",
@@ -145,7 +145,7 @@ const estilos = StyleSheet.create({
         resizeMode: "cover",
         flex: 1,
         borderRadius: 10,
-        borderWidth: 4,
+        borderWidth: 3,
         borderColor: "black",
 
     },

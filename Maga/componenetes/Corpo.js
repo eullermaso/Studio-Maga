@@ -16,7 +16,7 @@ export default function Corpo({}){
             <Botao design={estilos.botao} servico={"Consultar Serviços"} menu={Servico} tela='Consultas'></Botao>
             <Botao servico={"Agendamentos"} menu={Agenda} tela='Agendamentos'></Botao>
             <Botao servico={"Dúvidas | Suporte"} menu={grupo} tela=''></Botao>
-            <Botao servico={"Mais do nosso trabalho"} menu={''} tela='Audios'></Botao>
+            {/* <Botao servico={"Mais do nosso trabalho"} menu={''} tela='Audios'></Botao> */}
         </View>
         
     </View>
