@@ -35,7 +35,13 @@ const Agendamentos = () => {
         <View style={estilos.MainView}>
         <Text style={estilos.Text}>{input}</Text>
             <View style={estilos.View}>
-                <Text style={estilos.Text}>{data}</Text>
+                <View>
+                    <Text style={estilos.Text}>{data}</Text>
+                </View>
+                <View>
+                    <Text style={estilos.Text}>9:00am</Text>
+                </View>
+                
                 {/* <TouchableOpacity style={estilos.button} onPress={changeData}></TouchableOpacity> */}
             </View>
             
@@ -43,7 +49,7 @@ const Agendamentos = () => {
             <Text>Deletar</Text>
         </TouchableOpacity>
 
-        <TextInput style={estilos.input} value={input} onChangeText={setInput} placeholder="Adicione uma observação" keyboardType=""></TextInput>
+        {/* <TextInput style={estilos.input} value={input} onChangeText={setInput} placeholder="Adicione uma observação" keyboardType=""></TextInput> */}
         </View>
 
     </>
@@ -59,14 +65,14 @@ const estilos = StyleSheet.create({
     },
     View:{
         alignItems: "center",
-        justifyContent: "center",
-        marginTop: 100,
+        justifyContent: "space-around",
+        flexDirection: "row",
+        marginTop: 30,
         borderRadius: 10,
-        borderWidth: 1,
-        borderColor: "black",
-        width: "80%",
-        height: 100,
-        backgroundColor: "white"
+        width: "90%",
+        height: 80,
+        backgroundColor: "white",
+
     },
     MainView:{
         alignItems: "center",
@@ -75,7 +81,7 @@ const estilos = StyleSheet.create({
         
     },
     Text:{
-        fontSize: 25,
+        fontSize: 20,
 
     },
     Descricao:{

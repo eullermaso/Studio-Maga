@@ -118,8 +118,8 @@ const estilos = StyleSheet.create({
     },
     figura: {
         borderRadius: 10,
-        width: 100,
-        height: 100,
+        width: 95,
+        height: 95,
         marginTop: 5,
 
     },
