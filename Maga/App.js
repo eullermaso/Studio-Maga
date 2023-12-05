@@ -11,6 +11,7 @@ import Mao from './componenetes/telas/telas_servicos/Mao'
 import Agendado from './componenetes/telas/Agendado';
 import Agendamentos from './componenetes/telas/telas_servicos/Agendamentos';
 import Audios from './componenetes/telas/Audio'
+import Camera from './componenetes/telas/telas_servicos/Camera'
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,7 @@ export default function App() {
         <Stack.Screen name="Agendado" component={Agendado} options={{ headerShown: false }}/>
         <Stack.Screen name="Agendamentos" component={Agendamentos} options={{ headerShown: false }}/>
         <Stack.Screen name="Audios" component={Audios} options={{ headerShown: false }}/>
+        <Stack.Screen name="Camera" component={Camera} options={{ headerShown: false }}/>
       </Stack.Navigator>
     </NavigationContainer>
     </DataProvider>

@@ -4,8 +4,10 @@ import Servico from '../assets/Images_botao/consultar.png'
 import Texto from './Texto'
 import Botao from './Botao'
 import Agenda from'../assets/Images_botao/agenda.png'
-import Duvida from'../assets/Images_botao/agenda.png'
+import Duvida from'../assets/Images_botao/duvidas.png'
 import grupo from '../assets/Images_botao/grupo.png'
+import WaveSound from '../assets/Images_botao/wave_sound.png'
+import videoCamera from '../assets/Images_botao/camera.png'
 
 export default function Corpo({}){
     return<>
@@ -13,10 +15,10 @@ export default function Corpo({}){
     <View style={estilos.corpo}>
         
         <View  style={estilos.botoes}>
-            <Botao design={estilos.botao} servico={"Consultar Serviços"} menu={Servico} tela='Consultas'></Botao>
+            <Botao servico={"Consultar Serviços"} menu={Servico} tela='Consultas'></Botao>
             <Botao servico={"Agendamentos"} menu={Agenda} tela='Agendamentos'></Botao>
-            <Botao servico={"Dúvidas | Suporte"} menu={grupo} tela=''></Botao>
-            {/* <Botao servico={"Mais do nosso trabalho"} menu={''} tela='Audios'></Botao> */}
+            <Botao servico={"Câmera"} menu={videoCamera} tela='Camera'></Botao>
+            <Botao servico={"Áudio"} menu={WaveSound} tela='Audios'></Botao>
         </View>
         
     </View>
