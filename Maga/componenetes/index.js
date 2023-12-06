@@ -7,8 +7,9 @@ import Texto from './Texto'
 
 export default function Inicial({}){
     return <>
-    <ScrollView>
+    
     <Topo/>
+    <ScrollView>
     <View style={estilos.corpo}>
         <View  style={estilos.welcome}>
             <Texto style={estilos.mensagem}>Bem-Vindo ao Studio Maga!</Texto>

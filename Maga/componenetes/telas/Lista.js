@@ -66,7 +66,7 @@ export default function Lista() {
 
                 <View style={estilos.retrato}>
                     <View style={estilos.produtos}>
-                    <TouchableOpacity style={estilos.botao} onPress={() => {navigation.navigate("Unhas", {nome}), console.log(item.id, item.info[0]), setListaDesejos(item.id), changeData(item.info[0]+ "   R$ " + item.info[1])}}>
+                    <TouchableOpacity style={estilos.botao} onPress={() => {navigation.navigate("Unhas", {nome}), console.log(item.id, item.info[0]), setListaDesejos(item.id),changeData(item.info[0]+ "   R$ " + item.info[1])}}>
                         <View style={estilos.lista}>
                         
                                 <View style={estilos.figura}>
@@ -146,7 +146,7 @@ const estilos = StyleSheet.create({
         flex: 1,
         borderRadius: 10,
         borderWidth: 3,
-        borderColor: "black",
+        borderColor: "#bb9457",
 
     },
     info: {

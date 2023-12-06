@@ -17,17 +17,18 @@ import Arrow from '../Arrow'
 export default function Consulta(){
     const navigation = useNavigation();
     return <>
-    <ScrollView>
+    
     <Topo/>
+    <ScrollView>
     <View style={estilos.Descricao}>
         <Texto style={estilos.text}>Serviços</Texto>
     </View>
         <Arrow/>
     <View style={estilos.Buttons}>
         <Botao design={estilos.Bot} nome={estilos.nome} menu={nail} servico={"Unhas"} tela='Mao' resize={estilos.resize}></Botao>
-        <Botao design={estilos.Bot} nome={estilos.nome} menu={skincare} servico={"Skincare"} resize={estilos.resize}></Botao>
-        <Botao design={estilos.Bot} nome={estilos.nome} menu={depilacao} servico={"Depilação"} resize={estilos.resize}></Botao>
-        <Botao design={estilos.Bot} nome={estilos.nome} menu={eyebrow} servico={"Sobrancelha"} resize={estilos.resize}></Botao>
+        <Botao design={estilos.Bot} nome={estilos.nome} menu={skincare} servico={"Skincare"} tela='EmProducao' resize={estilos.resize}></Botao>
+        <Botao design={estilos.Bot} nome={estilos.nome} menu={depilacao} servico={"Depilação"} resize={estilos.resize} tela='EmProducao'></Botao>
+        <Botao design={estilos.Bot} nome={estilos.nome} menu={eyebrow} servico={"Sobrancelha"} resize={estilos.resize} tela='EmProducao'></Botao>
     </View>
     </ScrollView>
     

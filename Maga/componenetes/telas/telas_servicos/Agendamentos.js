@@ -27,7 +27,7 @@ const Agendamentos = () => {
     return<>
     <Topo/>
         <View style={estilos.Descricao}>
-            <Text style={estilos.nome}>Meus Agendamentos</Text>
+            <Text style={estilos.nome}>Agendamentos</Text>
         </View>
         <Arrow/>
 
@@ -39,14 +39,14 @@ const Agendamentos = () => {
                     <Text style={estilos.Text}>{data}</Text>
                 </View>
                 <View>
-                    <Text style={estilos.Text}>9:00am</Text>
+                    <Text style={estilos.Text}></Text>
                 </View>
                 
                 {/* <TouchableOpacity style={estilos.button} onPress={changeData}></TouchableOpacity> */}
             </View>
             
         <TouchableOpacity style={estilos.botao} onPress={changeData}>
-            <Text>Deletar</Text>
+            <Text style={{color:"white"}}>Deletar</Text>
         </TouchableOpacity>
 
         {/* <TextInput style={estilos.input} value={input} onChangeText={setInput} placeholder="Adicione uma observação" keyboardType=""></TextInput> */}
@@ -72,6 +72,7 @@ const estilos = StyleSheet.create({
         width: "90%",
         height: 80,
         backgroundColor: "white",
+        
 
     },
     MainView:{

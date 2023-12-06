@@ -17,7 +17,7 @@ export default function Corpo({}){
         <View  style={estilos.botoes}>
             <Botao servico={"Consultar Serviços"} menu={Servico} tela='Consultas'></Botao>
             <Botao servico={"Agendamentos"} menu={Agenda} tela='Agendamentos'></Botao>
-            <Botao servico={"Câmera"} menu={videoCamera} tela='Camera'></Botao>
+            <Botao servico={"Câmera"} menu={videoCamera} tela='photoCamera'></Botao>
             <Botao servico={"Áudio"} menu={WaveSound} tela='Audios'></Botao>
         </View>
         

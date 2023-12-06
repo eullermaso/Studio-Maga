@@ -1,23 +1,33 @@
 import React from "react";
 import Calendar from "react-native-calendars/src/calendar";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import Botao from "./Botao";
 import { useNavigation} from "@react-navigation/native";
-
+import { useState } from "react";
+import { useData } from "./DataContext";
 
 
 export default function Calendario({}) {
+  const {data, setData} = useData();
+  const [colorful, setColorful] = useState("grey")
 
-
+  const changeColor = () => {
+    if(colorful === 'grey'){
+      setColorful("orange")
+    }else{
+      setColorful("grey")
+    }
+  }
 
   return (
     <>
       <Calendar style={estilos.calendar}></Calendar>
       <View style={estilos.tabela}>
-        <Botao design={estilos.hora} servico="13:00"></Botao>
-        <Botao design={estilos.hora} servico="10:30"></Botao>
-        <Botao design={estilos.hora} servico="17:55"></Botao>
+        <TouchableOpacity style={[estilos.hora, {backgroundColor: colorful}]} onPress={() => {setData(data + "     14:00"); changeColor();}}>
+          <Text style={{color: "white", fontSize: 20, fontWeight: "bold"}}>14:00</Text>
+        </TouchableOpacity>
       </View>
+
 
 
 
@@ -53,7 +63,7 @@ const estilos = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 30,
-    backgroundColor: "grey",
+    borderRadius: 10,
   },
   tabela: {
     flexDirection: "row",

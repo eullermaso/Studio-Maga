@@ -4,7 +4,7 @@ import { TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function Botao({servico, menu,tela,design,nome, resize}){
+export default function Botao({servico, menu,tela,design,nome, resize, alerta}){
 
     
     
